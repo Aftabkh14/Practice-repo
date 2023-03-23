@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+    <record id="sports_view_form" model="ir.ui.view">
+        <field name="name">sports_view_form</field>
+        <field name="model">sports.tbl</field>
+        <field name="arch" type="xml">
+            <form string="sports_form">
+                <header>
+                        <field name="value3" widget="statusbar" clickable="1"/>
+                        <button type="object" name="newfunction" attrs="{'invisible': [('value3', 'in', ['pass'])]}" string="Fail"/>
+                  </header>
+                <sheet>
+                    <group>
+                      <group>
+                        <field name="bat_name"/>
+                    </group>
+                   <group>
+                        <field name="bat_color"/>
+                    </group>
+                   <group>
+                        <field name="bat_price"/>
+                    </group>
+                   <group>
+                        <field name="bat_weight"/>
+                    </group>
+                        <group>
+                        <field name="bat_number"/>
+                    </group>
+                   <group>
+                        <field name="bat_lenght"/>
+                    </group>
+                   <group>
+                        <field name="bat_company"/>
+                    </group>
+<!--                         <group>-->
+<!--                        <field name="sel_company"/>-->
+<!--                    </group>-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sports_view_tree" model="ir.ui.view">
+        <field name="name">sports_view_tree</field>
+        <field name="model">sports.tbl</field>
+        <field name="arch" type="xml">
+            <tree string="sports_tree">
+                <field name="bat_name"/>
+                <field name="bat_color"/>
+                <field name="bat_price"/>
+                <field name="bat_weight"/>
+                <field name="bat_number"/>
+                <field name="bat_lenght"/>
+                <field name="bat_company"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sports_action" model="ir.actions.act_window">
+        <field name="name">Sports</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sports.tbl</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="sports_menuitem_id" name="GM Sports" action="sports_action"/>
+  </data>
+</odoo>
