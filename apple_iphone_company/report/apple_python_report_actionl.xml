@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+
+                <report
+                    id="apple_python_report_id"
+                    model="apple.iphone.company"
+                    report_type="qweb-pdf"
+                    string="Python report"
+                    name="apple_iphone_company.apple_python_temp_report"
+                    file="apple_iphone_company.apple_python_web_report"
+                />
+    </data>
+</odoo>

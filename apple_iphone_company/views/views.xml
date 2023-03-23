@@ -1,0 +1,159 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="apple_iphone_company_list">
+            <field name="name">apple_iphone_company list</field>
+            <field name="model">apple.iphone.company</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="c_name"/>
+                    <field name="c_cnic"/>
+                    <field name="c_address"/>
+                    <field name="c_phone"/>
+                    <field name="c_gender"/>
+                    <field name="status"/>
+                    <field name="mac_id"/>
+                    <field name="ipad_id"/>
+                    <field name="iphone_id"/>
+                    <field name="watch_id"/>
+                    <field name="airpod_id"/>
+                    <field name="note"/>
+                    <field name="price"/>
+                    <field name="discount"/>
+                    <field name="total_price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="apple_iphone_company_action_p_window">
+            <field name="name">Apple Home</field>
+            <field name="res_model">apple.iphone.company</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="context" >{'search_default_group_by_gender': 1, 'search_default_c_cnic': 1}</field>  <!--1: this is defualt group by line code (this group_by_gender is taken from group by line name in the search view)
+                                                                                                                2: 'search_default_c_cnic': 1 is taken from filter in search view not from group cuz we are setting filter by defualt-->
+        </record>
+        <record id="apple_iphone_view_form" model="ir.ui.view">
+            <field name="name">apple_iphone_view_form</field>
+            <field name="model">apple.iphone.company</field>
+            <field name="arch" type="xml">
+                <form string="apple_iphone_form">
+<!--                    <header>-->
+<!--                        <field name="status" widget="statusbar" statubar_colors='{"new": "red"}' statusbar_visible="mark as done,cancel,add to cart"/>-->
+<!--                        <button type="object" id="statusbar_order" name="statusbar_order_func" string="Order" class="btn-warning" states="mark as done"/>-->
+<!--                        <button type="object" id="statusb" name="statusbar_add_to_cart_func" string="Add To Cart" class="btn-success" states="cancel"/>-->
+<!--                        <button type="object" id="nnni" name="statusbar_cancel_func" string="Cancel" class="btn-danger" states="add to cart"/>-->
+<!--&lt;!&ndash;                        <button type="object" id="mmmmo" name="mark_as_done" string="Mark as done" class="btn-danger"/>&ndash;&gt;-->
+<!--                        </header>-->
+                    <header>
+                        <field name="status" widget="statusbar" statubar_colors='{"new": "red"}' clickable="1"/>
+                        <button type="object" name="statusbar_order_func" string="Order" class="btn-warning"/>
+                        <button type="object" name="statusbar_add_to_cart_func" string="Add To Cart" class="btn-success"/>
+                        <button type="object" name="statusbar_cancel_func" string="Cancel" class="btn-danger"/>
+                    </header>
+
+
+                    <sheet>
+                        <group>
+                        <group>
+                            <field name="c_name"/>
+                        </group>
+                        <group>
+                            <field name="c_cnic"/>
+                        </group>
+                        <group>
+                            <field name="c_address"/>
+                        </group>
+                        <group>
+                            <field name="c_phone"/>
+                        </group>
+                        <group>
+                            <field name="c_gender" invisible="context.get('hide_c_gender')"/>
+                        </group>
+                        <group>
+                            <field name="mac_id"/>
+                        </group>
+                        <group>
+                            <field name="ipad_id"/>
+                        </group>
+                        <group>
+                            <field name="iphone_id"/>
+                        </group>
+                        <group>
+                            <field name="watch_id"/>
+                        </group>
+                        <group>
+                            <field name="airpod_id"/>
+                        </group>
+                            <group>
+                            <field name="note"/>
+                        </group>
+                        <group>
+                            <div style="float:right;padding-right:145px;">
+                                <div style="float:left;">
+                                    <h6 style="margin-bottom:-5px;margin-top:5px">Price:</h6>
+                                    <br/>
+                                    <h6 style="margin-bottom:-8px;">Discount:</h6>
+                                    <br/>
+                                    <h6>Total Price: </h6>
+                                </div>
+                                <div style="float:right;">
+                                    <field name="price"/>
+                                    <br/>
+                                    <field name="discount"/>
+                                    <br/>
+                                    <field name="total_price"/>
+                                </div>
+                            </div>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="apple_iphone_company_search" model="ir.ui.view">
+            <field name="name">apple.iphone.company.search</field>
+            <field name="model">apple.iphone.company</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="c_name" string="Customer Name"/>
+                    <field name="c_cnic" string="Customer CNIC"/>
+                    <field name="c_address" string="Customer Address"/>
+                    <field name="c_phone" string="Customer Phone"/>
+                    <field name="c_gender" string="Gender"/>
+                    <filter name="filter_male" string="Male" domain="[('c_gender', '=', 'male')]"/>  <!-- this is filter in odoo-->
+                   <separator/>  <!-- this is used for AND  not or-->
+                    <filter name="filter_femmale" string="Female" domain="[('c_gender', '=', 'female')]"/>
+                    <field name="mac_id" string="Mac ID"/>
+                    <field name="ipad_id" string="iPad ID"/>
+                    <field name="iphone_id" string="iPhone ID"/>
+                    <field name="watch_id" string="Watch ID"/>
+                    <field name="airpod_id" string="AirPod ID"/>
+                    <field name="note" string="Note"/>
+                    <field name="price" string="Price"/>
+                    <field name="discount" string="Discount"/>
+                    <field name="total_price" string="Total Price"/>
+                    <group expand="1" string="Group By">  <!--this is group by in odoo-->
+                    <filter string="Gender" name="group_by_gender" context="{'group_by':'c_gender'}"/> <!--this is group by in odoo-->
+                </group>
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Apple" id="apple_iphone_company_menu_root" sequence="1"/>
+        <menuitem name="Home" id="apple_iphone_company_menu_root_ii" parent="apple_iphone_company_menu_root"
+                   sequence="1"/>
+
+
+        <menuitem name="Home" id="apple_iphone_company_menu_root_iii" parent="apple_iphone_company_menu_root_ii"
+                  action="apple_iphone_company_action_p_window" sequence="1"/>
+
+    </data>
+</odoo>

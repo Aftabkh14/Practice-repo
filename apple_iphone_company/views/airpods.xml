@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <odoo>
+            <data>
+                <record model="ir.ui.view" id="airpod_tbl_tree_view_id">
+                    <field name="name">airpod.tbl list</field>
+                    <field name="model">airpod.tbl</field>
+                    <field name="arch" type="xml">
+                        <tree>
+                            <field name="airpods_models"/>
+                            <field name="prices"/>
+                        </tree>
+                    </field>
+                </record>
+                <record model="ir.actions.act_window" id="airpod_tbl_action_id_window">
+                    <field name="name">Apple Watch</field>
+                    <field name="res_model">airpod.tbl</field>
+                    <field name="view_mode">tree,form</field>
+                </record>
+                <record id="airpod_tbl_id_view_form" model="ir.ui.view">
+                    <field name="name">airpod_tbl_view_form</field>
+                    <field name="model">airpod.tbl</field>
+                    <field name="arch" type="xml">
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="airpods_models"/>
+                                    </group>
+                                    <group>
+                                        <field name="prices"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                            <div class="oe_chatter">
+                                <div class="oe_chatter">
+                                    <field name="message_follower_ids" widget="mail_followers"/>
+                                    <field name="message_ids" widget="mail_thread"/>
+                                </div>
+                            </div>
+                        </form>
+                    </field>
+                </record>
+                <record id="airpod_tbl_search" model="ir.ui.view">
+                    <field name="name">airpod.tbl.search</field>
+                    <field name="model">airpod.tbl</field>
+                    <field name="arch" type="xml">
+                        <search>
+                            <field name="airpods_models"/>
+                            <field name="prices"/>
+                        </search>
+                    </field>
+                </record>
+                <menuitem name="AirPods" id="airpod_tbl_menuitem_id" parent="apple_iphone_company_menu_root"
+                          action="airpod_tbl_action_id_window"/>
+            </data>
+        </odoo>
+    </data>
+</odoo>

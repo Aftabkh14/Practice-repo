@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="male_action_window">
+            <field name="name">Male</field>
+            <field name="res_model">apple.iphone.company</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="domain">[('c_gender', '=', 'male')]</field>
+        </record>
+        <menuitem id="male_id_root"
+                  name="Male" parent="apple_iphone_company_menu_root_ii"
+                  action="male_action_window"/>
+
+        <record model="ir.actions.act_window" id="female_action_window">
+            <field name="name">Female</field>
+            <field name="res_model">apple.iphone.company</field>
+            <field name="context">{'default_c_gender': 'female', 'default_note': 'Put your short description here...', 'hide_c_gender': 1}</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="domain">[('c_gender', '=', 'female')]</field>
+
+        </record>
+        <menuitem id="female_id_root" name="Female"
+                  parent="apple_iphone_company_menu_root_ii"
+                  action="female_action_window"/>
+
+
+    </data>
+</odoo>

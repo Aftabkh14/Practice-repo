@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="wizard_apple_home_form_id5" model="ir.ui.view">
+            <field name="name">Apple Home Wizard5</field>
+            <field name="model">wizard.model</field>
+            <field name="arch" type="xml">
+                <form string="_form">
+                    <sheet>
+                        <group>
+<!--                            <field name="name"/>-->
+                            <field name="choose_one"/>
+<!--                            <field name="age"/>-->
+                        </group>
+                        <group>
+                            <field name="mac_id" attrs="{'invisible': [('choose_one', '=', True)]}"/>
+                            <field name="iphone_id"  attrs="{'invisible': [('choose_one', '=', False)]}"/>
+<!--                            <field name="ipad_id"/>-->
+                        </group>
+                        <footer>
+                            <button type="object" name="update_mac" string="Update" class="oe_highlight"/>
+                            <button special="cancel" string="Cancel" class="btn-primary"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="wizard_action_apple_home_id2" model="ir.actions.act_window">
+            <field name="name">Update Mac,iPad and Iphone2</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.model</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="wizard_menu_item_id" name="Apple Home Wizard" parent="apple_iphone_company_menu_root_ii"
+                  action="wizard_action_apple_home_id2"/>
+
+    </data>
+</odoo>

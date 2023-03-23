@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+
+        <report
+                id="sale_action_report_id"
+                model="sale.order"
+                report_type="qweb-pdf"
+                string="Sale report"
+                name="apple_iphone_company.sale_report_temp_id"
+                file="apple_iphone_company.sale_report_temp_id"
+        />
+    </data>
+</odoo>

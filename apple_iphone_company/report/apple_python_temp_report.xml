@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <template id="apple_python_temp_report">
+            <t t-call="web.html_container">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <h1>Testing the Python......</h1>
+                        <h3 class="text-center">My first Python Report</h3>
+
+
+<!--          _____________________________________________________________________________________              -->
+
+
+                        <h4 class="text-left">iPad details</h4>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Models</th>
+                                <th>Prices</th>
+                                <th>Accessories</th>
+                            </tr>
+                            <t t-foreach="apple_ids" t-as="line">
+                                <tr>
+
+                                    <td>
+                                        <t t-esc="line['ipad_models']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line['prices']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line['accessories']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+        <!--___________________________________________________________________________________________-->
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

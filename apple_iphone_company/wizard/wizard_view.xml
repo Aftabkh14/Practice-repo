@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="wizard_model_form_id" model="ir.ui.view">
+            <field name="name">Wizard Model</field>
+            <field name="model">wizard.model</field>
+            <field name="arch" type="xml">
+                <form string="_form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="mac_id"/>
+                            <field name="iphone_id"/>
+                        </group>
+                        <footer>
+                            <button type="object" name="update_mac" string="Update" class="oe_highlight"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="wizard_action_id" model="ir.actions.act_window">
+            <field name="name">Update Mac and Iphone</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.model</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="wizard_menu_item_id" name="Open Wizard" parent="apple_iphone_company_menu_root"
+                  action="wizard_action_id"/>
+
+    </data>
+</odoo>

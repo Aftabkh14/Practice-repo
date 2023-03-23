@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="compare_apple_iphone_company_action_window">
+            <field name="name">Compare Apple</field>
+            <field name="res_model">apple.iphone.company</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="domain">[('price', '&lt;=', 500000)]</field>
+
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="compare_id_root" name="Compare" parent="apple_iphone_company_menu_root_ii" action="compare_apple_iphone_company_action_window"/>
+    </data>
+</odoo>

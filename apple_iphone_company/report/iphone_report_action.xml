@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+                id="iphone_report_action_id"
+                model="apple.iphone.company"
+                report_type="qweb-pdf"
+                string="Apple Report"
+                name="apple_iphone_company.apple_temp_main_report_id"
+                file="apple_iphone_company.apple_temp_main_report_id"
+        />
+    </data>
+</odoo>

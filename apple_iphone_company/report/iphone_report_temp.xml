@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="apple_temp_main_report_id">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+
+<!--                <t t-call="apple_iphone_company.sub_iphone_temp_id"/>--> <!-- called qweb temp below after this temp-->
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <table style="border: 5px solid black; height: 70px;"
+                               class="table table-bordered 5px ">
+                            <tr>
+                                <th>Name</th>
+                                <th>CNIC</th>
+                                <th>Adress</th>
+                                <th>Phone</th>
+                                <th>Gender</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="o.c_name"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.c_cnic"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="o.c_address"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="o.c_phone"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.c_gender"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>Mac ID</th>
+                                <th>Ipad ID</th>
+                                <th>iPhone ID</th>
+                                <th>Wacth ID</th>
+                                <th>AirPods ID</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="o.mac_id"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.ipad_id"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="o.iphone_id"/>
+                                </td>
+
+                                <td>
+                                    <span t-field="o.watch_id"/>
+                                </td>
+                                <td>
+                                    <span t-field="o.airpod_id"/>
+                                </td>
+                            </tr>
+
+                            <table class="table table-borderless" style="text-align:left;" width="100%">
+                                <tr width="100%">
+                                    <td>
+                                        <span t-field="o.price"/>
+                                    </td>
+                                    <th class="clr" style="text-align:left;">Price:</th>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span t-field="o.discount"/>
+                                    </td>
+                                    <th class="clr" style="text-align:left;">Discount:</th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span t-field="o.total_price"/>
+                                    </td>
+                                    <th class="clr" style="text-align:left;">Total Price:</th>
+                                </tr>
+                            </table>
+
+
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+
+
+
+
+
+<!--    _______________________________________________________________________________-->
+                        <!-- calling qweb temp-->
+
+
+<!--    <template id="sub_iphone_temp_id"> -->
+<!--<t t-call="web.external_layout">-->
+<!--                    <div class="page">-->
+<!--                        testing all the-->
+<!--                    </div>-->
+<!--                </t>-->
+<!--    </template>-->
+
+</odoo>

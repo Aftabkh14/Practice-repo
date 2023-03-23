@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="mac_apple_tree_view_id">
+            <field name="name">mac_apple list</field>
+            <field name="model">mac.tbl</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="displays"/>
+                    <field name="accessories"/>
+                    <field name="prices"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="mac_apple_action_id_window">
+            <field name="name">Mac</field>
+            <field name="res_model">mac.tbl</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="mac_apple_id_view_form" model="ir.ui.view">
+            <field name="name">mac_apple_view_form</field>
+            <field name="model">mac.tbl</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="displays"/>
+                            </group>
+                            <group>
+                                <field name="accessories"/>
+                            </group>
+                            <group>
+                                <field name="prices"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="mac_tbl_search" model="ir.ui.view">
+            <field name="name">mac.tbl.search</field>
+            <field name="model">mac.tbl</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="displays"/>
+                    <field name="accessories"/>
+                    <field name="prices"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Mac" id="mac_apple_menuitem_id" parent="apple_iphone_company_menu_root"
+                  action="mac_apple_action_id_window"/>
+
+    </data>
+</odoo>

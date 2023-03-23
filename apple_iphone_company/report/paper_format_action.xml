@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <!-- NAME & FILE_NAME should be the same -->
+                <report
+                    id="paper_format_report_id"
+                    model="apple.iphone.company"
+                    report_type="qweb-pdf"
+                    string="Paper Format report"
+                    name="apple_iphone_company."
+                    file="apple_iphone_company."
+                />
+    </data>
+</odoo>
