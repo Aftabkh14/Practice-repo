@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="beauty_shop_list">
+            <field name="name">beauty_shop list</field>
+            <field name="model">beauty.shop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="seriel"/>
+                    <field name="code"/>
+                    <field name="size"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <record id="beauty_shop_view_form" model="ir.ui.view">
+            <field name="name">beauty_shop_view_form</field>
+            <field name="model">beauty.shop</field>
+            <field name="arch" type="xml">
+                <form string="beauty_shop_form">
+                    <header>
+
+                        <button type="action" name="%(beauty_shop.action_beauty_btn_wizard_id)d" string="Beauty Wizard"
+                                class="oe_highlight"/>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="seriel"/>
+                            </group>
+                            <group>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="size"/>
+                            </group>
+                            <group>
+                                <field name="price"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="beauty_shop_action_window">
+            <field name="name">Beauty Shop</field>
+            <field name="res_model">beauty.shop</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Beuty Shop" id="beauty_shop_menu_root"/>
+
+        <menuitem name="Home" id="beauty_shop_menu_1" parent="beauty_shop_menu_root"
+                  action="beauty_shop_action_window"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <template id="sale_report_inherit" inherit_id="sale.report_saleorder_document">
+<!--            <xpath expr="//div[@class='row mt32 mb32']" position="after">-->
+
+<!--                <div class="row mt32 mb32" id="test_inherit">-->
+<!--                <div t-if="doc.client_order_ref"-->
+<!--                     class="col-auto col-3 mw-100 mb-2">-->
+<!--                    <strong>Practice Inheritence of report:</strong>-->
+<!--                </div>-->
+<!--                </div>-->
+
+            <xpath expr="//div[@class='row mt32 mb32']" position="replace">
+
+            </xpath>
+        </template>
+    </data>
+</odoo>

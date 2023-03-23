@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_beauty_wizard_btn_form" model="ir.ui.view">
+        <field name="name">beauty.wizard.btn.form</field>
+        <field name="model">beauty.wizard.btn</field>
+        <field name="arch" type="xml">
+            <form string="Create New Appointment">
+                <group>
+                    <field name="product_id"/>
+                </group>
+                <group>
+                    <field name="product_stts"/>
+                </group>
+                <group>
+                    <field name="delievery_date"/>
+                </group>
+                <footer>
+                    <button name="update_fun" type="object" string="Update" class="btn-primary"/>
+<!--                    <button name="action_view_appointment" type="object" string="View Appointments" class="btn-primary"/>-->
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_beauty_btn_wizard_id" model="ir.actions.act_window">
+        <field name="name">Beauty Wizard button</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">beauty.wizard.btn</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_beauty_wizard_btn_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

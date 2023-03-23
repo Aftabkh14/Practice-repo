@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="beauty_temp_main_report_id">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <h1 style="font-size: 100px; font-family: 'arabic_normal';">F</h1>
+                        </div>
+                        <div class="col-4"></div>
+                        <div class="col-8">
+                            <table class="table table-borderless" style="font-size: 30px;">
+                                <tr>
+                                    <th>Test</th>
+                                </tr>
+                                <tr>
+                                    <th>1122</th>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <hr style="border: 10px solid green;border-radius: 5px;"/>
+                    <div class="row">
+
+                        <div class="col-4">
+                            <table class="table table-borderless" style="text-align:left;" width="100%">
+
+                                <tr width="100%">
+                                    <td>
+                                        <!--                                                <span t-field=""/>-->
+                                    </td>
+                                    <th style="text-align:right;">:نوع الفاتورة</th>
+                                </tr>
+                                <tr>
+                                    <th class="clr" style="text-align:right;">:نوع الدفع</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

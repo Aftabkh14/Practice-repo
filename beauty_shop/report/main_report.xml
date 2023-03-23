@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+                id="main_report_action_id"
+                model="beauty.shop"
+                report_type="qweb-pdf"
+                string="B-Shop Report"
+                name="beauty_shop.beauty_temp_main_report_id"
+                file="beauty_shop.beauty_temp_main_report_id"
+        />
+    </data>
+</odoo>
