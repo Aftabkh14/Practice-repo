@@ -1,0 +1,61 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="tree_manchester_united_tbl_list">
+      <field name="name">manchester_united_tbl list</field>
+      <field name="model">manchester.united.tbl</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="club_name" placeholder="Manchester United"/>
+          <field name="total_players"/>
+          <field name="coach"/>
+          <field name="own"/>
+          <field name="ceo"/>
+          <field name="short_color"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_manchester_united_tbl_view_form" model="ir.ui.view">
+        <field name="name">manchester_united_tbl_view_form</field>
+        <field name="model">manchester.united.tbl</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                          <field name="club_name"/>
+                        </group>
+                      <group>
+                          <field name="total_players"/>
+                        </group>
+                        <group>
+                          <field name="coach"/>
+                        </group>
+                        <group>
+                          <field name="own"/>
+                        </group>
+                        <group>
+                          <field name="ceo"/>
+                        </group>
+                        <group>
+                          <field name="short_color"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="manchester_united_tbl_action_window">
+      <field name="name">MU</field>
+      <field name="res_model">manchester.united.tbl</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!--    <menuitem name="M" id="menu_eurocup_franchises_id"/>-->
+
+    <menuitem name="Franchises" id="menu_manchester_united_tbl" parent="menu_eurocup_franchises_id" action="manchester_united_tbl_action_window"/>
+
+  </data>
+</odoo>

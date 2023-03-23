@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="tree_eurocup_franchises_home_tbl_list">
+            <field name="name">eurocup_franchises_home_tbl_ list</field>
+            <field name="model">eurocup.franchises.home.tbl</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="game_number"/>
+                    <field name="game_date"/>
+                    <field name="Vanue"/>
+                    <field name="refrees"/>
+                    <field name="franchise_id"/>
+                    <field name="broadcaster_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_eurocup_franchises_home_tbl_view_form" model="ir.ui.view">
+            <field name="name">eurocup_franchises_home_tbl__view_form</field>
+            <field name="model">eurocup.franchises.home.tbl</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="game_number"/>
+                            </group>
+                            <group>
+                                <field name="game_date"/>
+                            </group>
+                            <group>
+                                <field name="Vanue"/>
+                            </group>
+                            <group>
+                                <field name="refrees"/>
+                            </group>
+                            <group>
+                                <field name="franchise_id"/>
+                                <field name="broadcaster_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="eurocup_franchises_home_tbl_action_window">
+            <field name="name">Home</field>
+            <field name="res_model">eurocup.franchises.home.tbl</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Euro Cup" id="menu_eurocup_franchises_id"/>
+
+        <menuitem name="Home" id="menu_eurocup_franchises_id_ii" parent="menu_eurocup_franchises_id"
+                  action="eurocup_franchises_home_tbl_action_window" sequence="1"/>
+
+    </data>
+</odoo>

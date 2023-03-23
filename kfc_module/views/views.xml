@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="kfc_module_list">
+            <field name="name">kfc_module list</field>
+            <field name="model">kfc.tbl</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="food_name"/>
+                    <field name="weight"/>
+                    <field name="packs"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+        <record id="kfc_view_form" model="ir.ui.view">
+            <field name="name">kfc_view_form</field>
+            <field name="model">kfc.tbl</field>
+            <field name="arch" type="xml">
+                <form string="kfc_form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="food_name"/>
+                            </group>
+                            <group>
+                                <field name="weight"/>
+                            </group>
+                            <group>
+                                <field name="packs"/>
+                            </group>
+                            <group>
+                                <field name="price"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="kfc_module_action_window">
+            <field name="name">K F C</field>
+            <field name="res_model">kfc.tbl</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="K F C" id="kfc_module_menu_root" action="kfc_module_action_window"/>
+
+    </data>
+</odoo>
